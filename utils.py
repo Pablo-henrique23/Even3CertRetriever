@@ -18,14 +18,14 @@ def get_certificate_list():
     sopa = BeautifulSoup(r, "html.parser")
     sufix = sopa.find_all("a", class_="btn btn-primary")[0]['href']
     
-    return f"{EVEN3}" + sufix
+    return EVEN3 + sufix
 
 def get_select_for_payment_page(first_page):
     r = requests.get(first_page, headers=HEADERS).content
     sopa = BeautifulSoup(r, "html.parser")
     sufix = sopa.find_all("a", class_="btn btn-primary btn-sm")[0]['href']
     
-    return f"{EVEN3}" + sufix
+    return EVEN3 + sufix
 
 def find_data(select_page):
     r = requests.get(select_page, headers=HEADERS).content
